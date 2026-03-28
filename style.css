@@ -1,0 +1,187 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 15px;
+    background: #1F3B36;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    margin-bottom: 15px;
+    font-size: 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.logo {
+    width: 26px;
+    height: 26px;
+    margin-left: 6px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+    margin: 0 auto 15px;
+}
+
+.menu button {
+    padding: 12px;
+    font-size: 14px;
+    border-radius: 10px;
+    border: none;
+    background: #EC7000;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.menu button:hover {
+    background: #ff8c1a;
+}
+
+.menu button.ativo {
+    background: #d65f00;
+    box-shadow: inset 0 0 8px rgba(0,0,0,0.3);
+    transform: scale(0.98);
+}
+
+.box {
+    position: relative;
+    overflow: hidden;
+
+    background: white;
+    padding: 18px;
+    margin: 10px auto;
+    width: 92%;
+    max-width: 380px;
+    border-radius: 18px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.box::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image: url('./images/logocopa.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 220px;
+
+    opacity: 0.06;
+    pointer-events: none;
+}
+
+.box h3 {
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 17px;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: 0.2s;
+}
+
+input:focus, select:focus {
+    border-color: #EC7000;
+    outline: none;
+    box-shadow: 0 0 5px rgba(236,112,0,0.3);
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 12px;
+    border-radius: 10px;
+    border: none;
+    background: #EC7000;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #d65f00;
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+.resultado {
+    margin-top: 15px;
+    font-weight: bold;
+    color: #333;
+    font-size: 15px;
+}
+
+.tela {
+    display: none;
+    animation: fade 0.3s ease;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 480px) {
+
+    body {
+        padding: 10px;
+    }
+
+    .box {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .menu {
+        width: 95%;
+    }
+
+    .menu button {
+        font-size: 15px;
+        padding: 14px;
+    }
+
+    input, select {
+        font-size: 16px;
+    }
+
+    h1 {
+        font-size: 16px;
+    }
+
+    .logo {
+        width: 20px;
+        height: 20px;
+    }
+
+    .box::before {
+        background-size: 160px;
+    }
+}

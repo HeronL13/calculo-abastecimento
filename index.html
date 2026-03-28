@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Cálculo de Abastecimento</title>
+
+<link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="icon" href="./images/logocopa.png">
+</head>
+
+<body>
+
+<h1 class="titulo">
+    Cálculo de Abastecimento
+    <img src="./images/logocopa.png" class="logo">
+</h1>
+
+<div class="menu">
+    <button onclick="mostrarTela('seguro')">Abastecimento Seguro</button>
+    <button onclick="mostrarTela('maximo')">Calcular Porcentagem Inicial %</button>
+    <button onclick="mostrarTela('cliente')">Solicitação Cliente</button>
+</div>
+
+<div id="seguro" class="tela">
+    <div class="box">
+        <h3>Abastecimento Seguro</h3>
+
+        <select id="tipo3">
+            <option value="P125">P125</option>
+            <option value="P190">P190</option>
+            <option value="P500">P500</option>
+            <option value="P1000">P1000</option>
+            <option value="P2000">P2000</option>
+            <option value="P4000">P4000</option>
+        </select>
+
+        <input type="text" id="densidade3" placeholder="Ex: 0.550" oninput="formatarDensidade(this)">
+        <input type="number" id="quantidade3" placeholder="Quantidade de tanques">
+        <input type="number" id="inicial3" placeholder="Porcentagem atual">
+
+        <button onclick="modo3()">Calcular Abastecimento Seguro</button>
+
+        <div class="resultado" id="resultado3"></div>
+    </div>
+</div>
+
+<div id="maximo" class="tela">
+    <div class="box">
+        <h3>Cálculo (Porcentagem Inicial)</h3>
+
+        <select id="tipo1">
+            <option value="P125">P125</option>
+            <option value="P190">P190</option>
+            <option value="P500">P500</option>
+            <option value="P1000">P1000</option>
+            <option value="P2000">P2000</option>
+            <option value="P4000">P4000</option>
+        </select>
+
+        <input type="text" id="densidade1" placeholder="Ex: 0.550" oninput="formatarDensidade(this)">
+        <input type="number" id="quantidade1" placeholder="Quantidade de tanques">
+        <input type="number" id="kg1" placeholder="KG abastecido">
+
+        <button onclick="modo1()">Calcular Porcentagem Inicial %</button>
+
+        <div class="resultado" id="resultado1"></div>
+    </div>
+</div>
+
+<div id="cliente" class="tela">
+    <div class="box">
+        <h3>Solicitação do Cliente</h3>
+
+        <select id="tipo2">
+            <option value="P125">P125</option>
+            <option value="P190">P190</option>
+            <option value="P500">P500</option>
+            <option value="P1000">P1000</option>
+            <option value="P2000">P2000</option>
+            <option value="P4000">P4000</option>
+        </select>
+
+        <input type="text" id="densidade2" placeholder="Ex: 0.550" oninput="formatarDensidade(this)">
+        <input type="number" id="quantidade2" placeholder="Quantidade de tanques">
+        <input type="number" id="inicial2" placeholder="Porcentagem inicial">
+        <input type="number" id="kg2" placeholder="KG abastecido">
+
+        <button onclick="modo2()">Calcular Solicitação</button>
+
+        <div class="resultado" id="resultado2"></div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
