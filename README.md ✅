@@ -1,0 +1,70 @@
+📌 Descrição do Projeto – Sistema de Cálculo de Abastecimento de GLP
+
+Este projeto é uma aplicação desenvolvida em JavaScript com o objetivo de realizar cálculos de abastecimento de tanques de GLP (gás liquefeito de petróleo) de forma prática, rápida e confiável.
+
+A aplicação permite calcular a porcentagem inicial e final de abastecimento, com base na quantidade de gás adicionada (em kg), volume do tanque (em litros) e densidade do produto.
+
+Apesar de o sistema realizar os cálculos de forma automatizada, é importante destacar que os resultados não são 100% exatos, mas sim estimativas técnicas confiáveis.
+
+Tanques como P125, P190, P500, etc. possuem valores nominais
+Na prática, a capacidade pode variar levemente devido a:
+*Fabricação
+*Desgaste do tanque
+*Condições físicas
+Ou seja, um P500 pode não ter exatamente 1000 litros reais.
+
+Funcionalidades
+Cálculo automático da porcentagem inicial do tanque
+Cálculo da porcentagem final após o abastecimento
+Suporte para diferentes tipos de tanques:
+P125
+P190
+P500
+P1000
+P2000
+P4000
+
+Interface preparada para uso em aplicação mobile (app)
+Lógica implementada em JavaScript puro
+Como funciona o cálculo
+
+O sistema utiliza uma tabela de referência com a capacidade dos tanques em litros:
+
+const tabela = {
+  P125: 250,
+  P190: 400,
+  P500: 1000,
+  P1000: 2000,
+  P2000: 4000,
+  P4000: 8000
+};
+
+Etapas do cálculo:
+
+Conversão de kg para litros
+
+Utiliza a densidade do GLP
+Fórmula:
+litrosAbastecidos = kg / densidade
+
+Cálculo da porcentagem adicionada
+
+porcentagem = (litrosAbastecidos / capacidadeTanque) * 100
+
+Cálculo final
+
+porcentagemFinal = porcentagemInicial + porcentagemAdicionada
+Objetivo do Projeto
+
+Este sistema foi desenvolvido para auxiliar no controle de abastecimento de tanques de GLP, sendo útil para:
+
+Técnicos de campo
+Empresas de distribuição de gás
+Controle operacional de abastecimentos
+
+Além disso, o projeto foi pensado para ser facilmente integrado a um aplicativo mobile, permitindo uso prático no dia a dia.
+
+Tecnologias Utilizadas
+JavaScript
+HTML
+CSS
